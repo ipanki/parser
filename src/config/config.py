@@ -12,4 +12,7 @@ class Config(BaseSettings):
         env_file_encoding = 'utf-8'
 
 
+config = Config()
+
+
 
