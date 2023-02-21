@@ -11,7 +11,7 @@ class Clothes(BaseModel):
     model: str = Field(...)
     category: str = Field(...)
     price: str = Field(...)
-    created_at: datetime | datetime.utcnow()
+    created_at: datetime = datetime.utcnow()
 
     @validator('id', pre=True)
     def validate_id(cls, _id) -> str:
