@@ -26,6 +26,8 @@ uvicorn = "0.17.6"
 pydantic = "1.9.0"
 sqlalchemy = "*"
 pymongo = "*"
+beautifulsoup4 = "*"
+httpx = "*"
 
 [dev-packages]
 
