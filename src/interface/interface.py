@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class InterfaceDaoLamoda(ABC):
+class InterfaceDao(ABC):
 
     @abstractmethod
     def drop_collection(self):

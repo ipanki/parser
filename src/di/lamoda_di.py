@@ -1,4 +1,4 @@
-from src.dao.LamodaDao import LamodaDao
+from src.dao.lamoda_dao import LamodaDao
 from src.models.database import connect_db
 
 

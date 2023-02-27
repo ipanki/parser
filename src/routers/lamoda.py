@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Body, Depends
 from src.models.lamoda.models import Clothes, ClothesCreateUpdate, ClothesResponse
-from src.di.lamodaDI import LamodaService
+from src.di.lamoda_di import LamodaService
 
 router = APIRouter(prefix='/lamoda')
 

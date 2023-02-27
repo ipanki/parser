@@ -4,10 +4,10 @@ from fastapi import Body, Depends, HTTPException, status
 from bson.objectid import ObjectId
 from src.models.lamoda.models import ClothesCreateUpdate, ClothesResponse
 from src.models.database import connect_db
-from src.interface.interface import InterfaceDaoLamoda
+from src.interface.interface import InterfaceDao
 
 
-class LamodaDao(InterfaceDaoLamoda):
+class LamodaDao(InterfaceDao):
     def __init__(self, session: Depends(connect_db)):
         self.__session = session
         self.__db = self._get_collection(session)
