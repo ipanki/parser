@@ -5,7 +5,7 @@ from src.di.twitch_di import TwitchService
 router_twitch = APIRouter(prefix='/twitch')
 
 
-@router_twitch.get('/clothes', response_model=StreamsResponse)
+@router_twitch.get('/streams', response_model=StreamsResponse)
 def get_streams(service: TwitchService = Depends()):
     return service.get_all_streams()
 

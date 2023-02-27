@@ -24,7 +24,7 @@ class Streams(BaseModel):
         schema_extra = {
             'example': {
                 'id': '62f264f7705d3742932262ec',
-                'game_': 'Counter-Strike: Global Offensive',
+                'game': 'Counter-Strike: Global Offensive',
                 'title': 'Hard stream',
                 'type': 'live',
                 'user_login': 'RazDva',
