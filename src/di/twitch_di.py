@@ -1,24 +1,24 @@
-from src.dao.lamoda_dao import LamodaDao
+from src.dao.twitch_dao import TwitchDao
 from src.models.database import connect_db
 
 
-class LamodaService:
+class TwitchService:
     def __init__(self):
-        self.__dao = LamodaDao(connect_db())
+        self.__dao = TwitchDao(connect_db())
 
-    def get_all_clothes(self):
+    def get_all_streams(self):
         return self.__dao.get_elements()
 
-    def create_thing_lamoda(self, thing):
-        return self.__dao.create(thing)
+    def create_stream(self, stream):
+        return self.__dao.create(stream)
 
-    def get_one_thing(self, _id):
+    def get_one_stream(self, _id):
         return self.__dao.get_element(_id)
 
-    def delete_thing(self, _id):
+    def delete_stream(self, _id):
         return self.__dao.delete_element(_id)
 
-    def insert_clothes(self, elements):
+    def insert_streams(self, elements):
         return self.__dao.insert_elements(elements)
 
     def drop_collection(self):
