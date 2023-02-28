@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Body, Depends
+from fastapi_redis_cache import cache
 from src.models.lamoda.models import Clothes, ClothesCreateUpdate, ClothesResponse
 from src.di.lamoda_di import LamodaService
 
@@ -6,6 +7,7 @@ router = APIRouter(prefix='/lamoda')
 
 
 @router.get('/clothes', response_model=ClothesResponse)
+@cache(expire=1)
 def get_clothes(service: LamodaService = Depends()):
     return service.get_all_clothes()
 
@@ -21,5 +23,6 @@ def delete_thing(_id: str, service: LamodaService = Depends()):
 
 
 @router.get('/{_id}', response_model=Clothes)
+@cache(expire=1)
 def get_thing(_id: str, service: LamodaService = Depends()):
     return service.get_one_thing(_id)

@@ -10,6 +10,7 @@ class Config(BaseSettings):
     AUTH_URL: str
     CLIENT_ID: str
     CLIENT_SECRET: str
+    LOCAL_REDIS_URL: str
 
     class Config:
         env_file = '.env'

@@ -29,6 +29,7 @@ pymongo = "*"
 beautifulsoup4 = "*"
 httpx = "*"
 kafka-python = "*"
+fastapi-redis-cache = "*"
 
 [dev-packages]
 
