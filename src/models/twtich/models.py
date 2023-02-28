@@ -13,7 +13,7 @@ class Streams(BaseModel):
     user_name: str = Field(...)
     viewer_count: int = Field(...)
     type: str = Field(...)
-    created_at: datetime | datetime.utcnow()
+    created_at: datetime = datetime.utcnow()
 
     @validator('id', pre=True)
     def validate_id(cls, v) -> str:
@@ -24,7 +24,7 @@ class Streams(BaseModel):
         schema_extra = {
             'example': {
                 'id': '62f264f7705d3742932262ec',
-                'game_': 'Counter-Strike: Global Offensive',
+                'game': 'Counter-Strike: Global Offensive',
                 'title': 'Hard stream',
                 'type': 'live',
                 'user_login': 'RazDva',
