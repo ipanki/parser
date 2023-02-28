@@ -10,6 +10,10 @@ class Config(BaseSettings):
     AUTH_URL: str
     CLIENT_ID: str
     CLIENT_SECRET: str
+    LAMODA_URL = 'https://www.lamoda.by/c/517/clothes-muzhskie-bryuki/'
+    LAMODA_PRICE = 'x-product-card-description__price-single x-product-card-description__price-WEB8507_price_no_bold'
+    LAMODA_DISCOUNT_PRICE = 'x-product-card-description__price-new x-product-card-description__price-WEB8507_price_no_bold'
+    LAMODA_PAGES = 1
 
     class Config:
         env_file = '.env'

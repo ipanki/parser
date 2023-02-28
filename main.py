@@ -8,6 +8,7 @@ app = FastAPI()
 
 app.include_router(router)
 app.include_router(router_twitch)
+
 if __name__ == '__main__':
     run_parser_lamoda()
     run_parser_twitch()
