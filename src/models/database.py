@@ -3,7 +3,7 @@ from src.config.config import config
 
 
 def connect_db():
-    client = mongo_client.MongoClient(config.DATABASE_URL)
-    db = client[config.MONGO_INITDB_DATABASE]
+    client = mongo_client.MongoClient(config.database_url)
+    db = client[config.mongo_initdb_database]
     return db
 
