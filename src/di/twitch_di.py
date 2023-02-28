@@ -17,3 +17,9 @@ class TwitchService:
 
     def delete_stream(self, _id):
         return self.__dao.delete_element(_id)
+
+    def insert_streams(self, elements):
+        return self.__dao.insert_elements(elements)
+
+    def drop_collection(self):
+        return self.__dao.drop_collection()

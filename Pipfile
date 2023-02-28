@@ -28,6 +28,7 @@ sqlalchemy = "*"
 pymongo = "*"
 beautifulsoup4 = "*"
 httpx = "*"
+kafka-python = "*"
 
 [dev-packages]
 
