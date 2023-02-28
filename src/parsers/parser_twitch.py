@@ -1,13 +1,13 @@
 import requests
-from src.config.config import config
+from src.config.config import twitch_config
 
 
 class TwitchParser:
     def __init__(self):
-        self.streams = config.STREAMS
-        self.client_id = config.CLIENT_ID
-        self.auth_url = config.AUTH_URL
-        self.client_secret = config.CLIENT_SECRET
+        self.streams = twitch_config.streams
+        self.client_id = twitch_config.client_id
+        self.auth_url = twitch_config.auth_url
+        self.client_secret = twitch_config.client_secret
 
     def _get_data_twitch(self):
         response = requests.post(

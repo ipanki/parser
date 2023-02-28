@@ -4,15 +4,15 @@ import httpx
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
 from starlette import status
-from src.config.config import config
+from src.config.config import lamoda_config
 
 
 class ParserLamoda:
     def __init__(self):
-        self.url = config.LAMODA_URL
-        self.price = config.LAMODA_PRICE
-        self.discount_price = config.LAMODA_DISCOUNT_PRICE
-        self.pages = config.LAMODA_PAGES
+        self.url = lamoda_config.url
+        self.price = lamoda_config.price
+        self.discount_price = lamoda_config.discount_price
+        self.pages = lamoda_config.pages
 
     async def parse_clothes(self):
         man_clothes = []

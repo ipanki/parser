@@ -2,18 +2,32 @@ from pydantic import BaseSettings
 
 
 class Config(BaseSettings):
-    MONGO_INITDB_ROOT_USERNAME: str
-    MONGO_INITDB_ROOT_PASSWORD: str
-    MONGO_INITDB_DATABASE: str
-    DATABASE_URL: str
-    STREAMS: str
-    AUTH_URL: str
-    CLIENT_ID: str
-    CLIENT_SECRET: str
-    LAMODA_URL = 'https://www.lamoda.by/c/517/clothes-muzhskie-bryuki/'
-    LAMODA_PRICE = 'x-product-card-description__price-single x-product-card-description__price-WEB8507_price_no_bold'
-    LAMODA_DISCOUNT_PRICE = 'x-product-card-description__price-new x-product-card-description__price-WEB8507_price_no_bold'
-    LAMODA_PAGES = 1
+    mongo_initdb_root_username: str
+    mongo_initdb_root_password: str
+    mongo_initdb_database: str
+    database_url: str
+
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
+
+
+class TwitchConfig(BaseSettings):
+    streams: str
+    auth_url: str
+    client_id: str
+    client_secret: str
+
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
+
+
+class LamodaConfig(BaseSettings):
+    url = 'https://www.lamoda.by/c/517/clothes-muzhskie-bryuki/'
+    price = 'x-product-card-description__price-single x-product-card-description__price-WEB8507_price_no_bold'
+    discount_price = 'x-product-card-description__price-new x-product-card-description__price-WEB8507_price_no_bold'
+    pages = 1
 
     class Config:
         env_file = '.env'
@@ -21,6 +35,8 @@ class Config(BaseSettings):
 
 
 config = Config()
+lamoda_config = LamodaConfig()
+twitch_config = TwitchConfig()
 
 
 
