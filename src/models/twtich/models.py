@@ -13,7 +13,7 @@ class Streams(BaseModel):
     user_name: str = Field(...)
     viewer_count: int = Field(...)
     type: str = Field(...)
-    created_at: datetime | datetime.utcnow()
+    created_at: datetime = datetime.utcnow()
 
     @validator('id', pre=True)
     def validate_id(cls, v) -> str:
